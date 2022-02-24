@@ -1,0 +1,33 @@
+/*
+  Blink and Variable
+  Creating a variable and assigning a value to it. 
+
+  Turns the LED on for one second,  then off for one second, 
+  then it repeatedly adds one second between each loop for the delay.
+
+
+  Created by: Emmanuel Garcia Maltes
+  Created on: 2022/02/24
+
+ */
+
+int delayTime [] = {500,200}; /* Defining the variable, delayTime as a integer
+then splitting it into an array to define more than one value to the variable  */
+
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+                    
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(delayTime[0]);                       // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(delayTime[1]);                       // wait for a second
+
+  delayTime[0] += 1000; // constantly adding 1 second to the first string in the array. 
+
+}
